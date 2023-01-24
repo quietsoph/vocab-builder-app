@@ -1,0 +1,19 @@
+<div class="container">
+    <%= render 'search/form' %>
+
+    <% if @roots.empty? %>
+        <p>No root found</p>
+    <% end %>
+
+    <div class="result">
+        <% @roots.each do |root| %>
+            <p><%= link_to root.text, root_path %></p>
+            <% root.concepts.each do |concept| %>
+                <div class="related-concepts">
+                    <p><%= link_to concept.text, concept_path(concept.id) %></p>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+

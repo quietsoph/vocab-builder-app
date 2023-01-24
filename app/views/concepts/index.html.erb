@@ -1,0 +1,11 @@
+
+<%= render 'concepts/form_search' %>
+
+<button type="button" class="btn btn-outline-primary"><%= link_to "New Concept", new_concept_path %></button>
+
+<h2 class="text-conter"><%= pluralize(@concepts.count, 'Concepts') %></h2>
+<% @concepts.each do |concept| %>
+    <p>
+        <%= link_to concept.text, concept_path(concept.id) %>
+    </p>
+<% end %>

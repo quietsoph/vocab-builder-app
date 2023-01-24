@@ -1,0 +1,29 @@
+<%= form_for @concept do |f| %>
+    <div class="mb-3">
+        <%= f.label :text, 'Concept', :class => 'form-label' %>
+        <%= f.text_field :text,  :class => 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.label :meaning, :class => 'form-label' %>
+        <%= f.text_area :meaning, :class => 'form-control', :row => '3' %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :image, :class => 'form-label' %>
+        <%= f.text_area :image, :placeholder => "Search image or enter a link",:class => 'form-control', :row => '3' %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :example, :class => 'form-label' %>
+        <%= f.text_area :example, :class => 'form-control', :row => '6' %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :note, :class => 'form-label' %>
+        <%= f.text_area :note, :class => 'form-control', :row => '3' %>
+    </div>
+
+    <div class="mb-3">
+        <%= f.collection_select :root_ids, Root.order(:text), :id, :text %>
+    </div>
+
+    <%= f.submit %>
+<% end %>

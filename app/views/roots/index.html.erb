@@ -1,0 +1,23 @@
+<%= render :partial => 'form' %>
+
+<h2>All Roots</h2>
+<% @roots.each do |root| %>
+    <div>
+        <div class="root-line">
+            <h3><%= root.text %></h3>
+            <div class="controls">
+                <button type="button" class="btn btn-outline-success"><%= link_to 'Edit', edit_root_path(root.id) %></button>
+                <button type="button" class="btn btn-outline-danger"><%= link_to 'Delete', root_path(root.id), :method=> 'delete' %></button>
+            </div>
+        </div>
+
+        <div class="related-concepts">
+            <% root.concepts.each do |concept| %>
+            <p>
+                <%= link_to concept.text, concept_path(concept.id) %>
+            </p>
+            <% end %>
+        </div>
+
+    </div>
+<% end %>

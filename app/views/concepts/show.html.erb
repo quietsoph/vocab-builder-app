@@ -1,0 +1,32 @@
+<div class="container-sm">
+
+    <h2 class="text-capitalize"><%= @concept.text %></h2>
+    <div class="controls">
+        <button type="button" class="btn btn-outline-success"><%= link_to 'Edit', edit_concept_path(@concept.id) %></button>
+        <button type="button" class="btn btn-outline-danger"><%= link_to 'Delete', concept_path(@concept.id), :method=> 'delete' %></button>
+    </div>
+    <div>
+        <% if @concept.image.present? %>
+            <%= image_tag @concept.image, :class => 'rounded float-start' %>
+        <% end %>
+
+        <p>Meaning:</p>
+        <p><%= @concept.meaning %></p>
+
+        <% if @concept.example.present? %>
+            <p>Example: </br><%= @concept.example %></p>
+        <% end %>
+
+        <% if @concept.note.present? %>
+            <p>Note: </br><%= @concept.note %></p>
+        <% end %>
+
+        <div class="related-roots">
+            <p>Related roots</p>
+            <% @concept.roots.each do |root| %>
+                <p><%= link_to root.text, root_path(root.id) %></p>
+            <% end %>
+        </div>
+    </div>
+
+</div>

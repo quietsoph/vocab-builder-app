@@ -1,0 +1,29 @@
+* {
+    /* border: 1px solid red */
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+button a:hover {
+    color: white;
+}
+/* -----------------Styling header ------------------------- */
+.logo {
+    width: 50px;
+    height: auto;
+}
+/* ---------------Styling roots/index ---------------------- */
+.root-line {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.root-line img {
+    width: 20px;
+    height: 20px;
+}
+
