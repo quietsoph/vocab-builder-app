@@ -46,6 +46,6 @@ class ConceptsController < ApplicationController
 
   private
   def concept_params
-    params.require(:concept).permit(:text, :meaning, :image, :example, :note)
+    params.require(:concept).permit(:text, :meaning, :image, :example, :note, :root_ids => [])
   end
 end

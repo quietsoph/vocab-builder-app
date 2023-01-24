@@ -22,7 +22,7 @@
     </div>
 
     <div class="mb-3">
-        <%= f.collection_select :root_ids, Root.order(:text), :id, :text %>
+        <%= f.collection_check_boxes :root_ids, Root.all.sort, :id, :text %>
     </div>
 
     <%= f.submit %>
