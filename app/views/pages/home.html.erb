@@ -1,1 +1,3 @@
-
+<%  if @current_user.present? %>
+    <p>Welcome banck <%= @current_user_user.email.split("@").first %></p>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_22_225716) do
+ActiveRecord::Schema.define(version: 2023_01_24_080931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,22 @@ ActiveRecord::Schema.define(version: 2023_01_22_225716) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "linkages", force: :cascade do |t|
+    t.bigint "concept_id"
+    t.bigint "linking_concept_id"
+    t.integer "association_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["concept_id"], name: "index_linkages_on_concept_id"
+    t.index ["linking_concept_id"], name: "index_linkages_on_linking_concept_id"
+  end
+
+  create_table "relations", force: :cascade do |t|
+    t.text "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "roots", force: :cascade do |t|
     t.text "text"
     t.integer "user_id"
@@ -53,6 +69,9 @@ ActiveRecord::Schema.define(version: 2023_01_22_225716) do
     t.boolean "is_admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
+  add_foreign_key "linkages", "concepts"
+  add_foreign_key "linkages", "concepts", column: "linking_concept_id"
 end

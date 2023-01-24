@@ -36,6 +36,13 @@ g5 = Category.create :name => "Verb"
 g6 = Category.create :name => "Phrase"
 puts "#{ Category.count } Categories created"
 
+Relation.destroy_all
+a1 = Relation.create :name => 'Similarity'
+a2 = Relation.create :name => 'Contrast'
+a3 = Relation.create :name => 'Contiguity'
+puts "#{ Relation.count } relations created"
+
+
 # ------------------------Association -------------------#
 puts "Users and roots"
 u1.roots << r1 << r2
@@ -59,6 +66,10 @@ g6.concepts << c1 << c2 << c4 << c5
 g1.concepts << c6
 g4.concepts << c3
 
+
+puts "Concepts and its linking concepts"
+c1.linking_concepts << c2 << c4
+c2.linking_concepts << c4 << c6
 
 
 

@@ -27,6 +27,13 @@
                 <p><%= link_to root.text, root_path(root.id) %></p>
             <% end %>
         </div>
+
+        <div class="linking-concepts">
+            <p>Linking concepts</p>
+            <% @concept.linking_concepts.each do |lc| %>
+                <%= link_to lc.text, concept_path(lc.id) %>
+            <% end %>
+        </div>
     </div>
 
 </div>
