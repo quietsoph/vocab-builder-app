@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-u1 = User.create :email => 'jonesy@ga.co', :is_admin => true
-u2 = User.create :email => 'craigsy@ga.co'
+u1 = User.create :email => 'jonesy@ga.co', :password => "duck", :is_admin => true
+u2 = User.create :email => 'craigsy@ga.co', :password => "duck"
 puts "#{ User.count } users"
 
 Root.destroy_all
@@ -18,7 +18,7 @@ r3 = Root.create :text => 'lose'
 puts "#{ Root.count } roots"
 
 Concept.destroy_all
-c1 = Concept.create :text => 'stand out', :meaning => 'exceptionally good', :image => 'https://www.freepik.com/free-photo/closeup-rubber-duckies_3011776.htm#query=stand%20out&position=25&from_view=keyword', :example => "The article focuses on Montgomery's strength as Fanboys President but also highlights her as a stand out among an industry dominated by men.", :source => 'An article titled Fanboys Marketplace President Lisa Montgomery Makes the Dallas Morning News', :note => "Tone: neutral /n Mode : neutral /n Register: neutral /n Nuance: neutral /n Dialect: neutral"
+c1 = Concept.create :text => 'stand out', :meaning => 'exceptionally good', :image => 'https://www.scienceofpeople.com/wp-content/uploads/2021/08/How-to-Stand-Out.jpeg', :example => "The article focuses on Montgomery's strength as Fanboys President but also highlights her as a stand out among an industry dominated by men.", :source => 'An article titled Fanboys Marketplace President Lisa Montgomery Makes the Dallas Morning News', :note => "Tone: neutral /n Mode : neutral /n Register: neutral /n Nuance: neutral /n Dialect: neutral"
 c2 = Concept.create :text => "can't stand", :meaning => 'strongly dislike', :image => 'https://pyxis.nymag.com/v1/imgs/9fa/3d5/5072220798b8fd6f8b1c1505fad02aaaa3-02-misophonia.rhorizontal.w700.jpg', :example => "A small group of people with a condition called misophonia, can't stand even small noise", :source => 'News', :note => "Tone: neutral /n Mode : neutral /n Register: neutral /n Nuance: neutral /n Dialect: British"
 c3 = Concept.create :text => "stand", :meaning => 'Exist. If a decision, law, or offer stands, it still exists and has not been changed or cancelled.', :image => 'https://boatplanet.com/storage/ZWy6YtQOqoqcLWHxzfbiXEQ1IEOFRCbJLT3faPMy.png', :example => "Although exceptions could be made, the rule still stands.", :source => 'News', :note => "Tone: formal /n Mode : Written /n Register: Law /n Nuance: neutral /n Dialect: American"
 c4 = Concept.create :text => 'stand to lose', :meaning => 'very likely to lose', :image => 'https://www.azquotes.com/picture-quotes/quote-the-more-you-want-the-more-you-stand-to-lose-aesop-40-82-16.jpg', :example => 'They could stand to lose the majority of their workforce due to the strike.', :source => 'News', :note => 'Tone: neutral'

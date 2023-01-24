@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   root :to => 'pages#home'
 
-  resources :users, :only => [:new, :create]
+  resources :users, :only => [:index, :new, :create]
   resources :roots
   resources :concepts
-  get '/search', to: 'search#index'
+  get '/search', to: 'search#index', :as => 'search_roots'
   get '/concepts/index/search', to: 'concepts#index', :as => 'search_concepts'
 
   get '/login' => 'session#new'

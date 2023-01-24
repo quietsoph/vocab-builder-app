@@ -30,7 +30,6 @@ class ConceptsController < ApplicationController
   def update
     @concept = Concept.find(params[:id])
     @concept.update concept_params
-    #raise 'hell'
     redirect_to concept_path
   end
 

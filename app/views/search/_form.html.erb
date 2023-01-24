@@ -1,4 +1,4 @@
-<%= search_form_for(@query, url: search_path, method: :get, class:'d-flex') do |f| %>
+<%= search_form_for(@query, url: search_roots_path, method: :get, class:'d-flex') do |f| %>
   <%= f.search_field :text_cont,
    placeholder: "Search for roots...",
    class: "form-control me-2" %>

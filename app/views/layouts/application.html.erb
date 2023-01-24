@@ -10,24 +10,36 @@
   </head>
 
   <body>
-    <div>
+    <div class="wrap">
       <div class="header">
         <%= link_to image_tag("honeycomb", alt: "Honeycomb", class: 'logo'), root_path %>
-        <nav>
-          <%= link_to 'Roots', roots_path %>
-          <%= link_to 'Concepts', concepts_path %>
+        <nav class="col-9">
           <% if @current_user.present? %>
-            <%= link_to 'Sign out' "#{ @current_user.email }", login_path, :method => 'delete' %>
+            <% if @current_user.is_admin? %>
+              <%= link_to 'All users', users_path %>
+            <% end %>
+            <%= link_to 'Roots', roots_path %>
+            <%= link_to 'Concepts', concepts_path %>
+            <div class="dropdown">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= @current_user.email %>
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Logout ', login_path, :method => 'delete', :class => 'dropdown-item' %></li>
+              </ul>
+            </div>
             <% else %>
+              <%= link_to 'Sign in', login_path %>
               <%= link_to 'Sign up', new_user_path %>
-              <%= link_to 'Sign in', new_user_path %>
           <% end %>
-      </nav>
+        </nav>
       </div>
+      <div class="container">
 
-      <div>
-
-      <%= yield %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
+

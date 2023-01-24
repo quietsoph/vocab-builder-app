@@ -1,29 +1,55 @@
+/* ---------------General styling ---------------------------- */
 * {
     /* border: 1px solid red */
 }
 
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.8rem;
+}
+
 a {
-    color: black;
     text-decoration: none;
+    display: block;
 }
 
-button a:hover {
-    color: white;
+/* ---------------Layout ------------------------------------- */
+body {
+    border: 1px solid red;
 }
-/* -----------------Styling header ------------------------- */
-.logo {
-    width: 50px;
-    height: auto;
+
+.wrap {
+    border: 1px solid red;
 }
-/* ---------------Styling roots/index ---------------------- */
-.root-line {
+
+/* ---------------Style header and nav ----------------------- */
+.header {
+    /* border: 2.5px solid #ca8736; */
     display: flex;
-    justify-content: left;
     align-items: center;
+    justify-content: space-between;
+    background-color: #cbcbcb;
+    padding: 1rem 0;
 }
 
-.root-line img {
-    width: 20px;
-    height: 20px;
+.logo {
+    max-width: 100px;
+    width: 10vw;
+    margin-left: 1rem;
+    display: block;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+nav > * {
+    padding-right: 2rem;
+    color: #060504;
 }
 
