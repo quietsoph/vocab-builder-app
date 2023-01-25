@@ -1,7 +1,14 @@
 class RootsController < ApplicationController
   def index
-    @roots = Root.all.sort_by { |root| [root.created_at, root.updated_at]}.reverse
+    if params[:query].blank?
+      @roots = Root.all
+    else
+      @parameter = params[:query].downcase
+      @roots = Root.all.where("lower(text) LIKE :query", query: "%#{@parameter}%")
+    end
+
     @root = Root.new
+
   end
 
   def create
@@ -13,6 +20,10 @@ class RootsController < ApplicationController
     @root = Root.find params[:id]
     @root.update root_params
     redirect_to roots_path
+  end
+
+  def show
+    @root = Root.find params[:id]
   end
 
   private

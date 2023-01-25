@@ -1,23 +1,37 @@
-<%= render :partial => 'form' %>
+<div class="container roots">
+    <%= render :partial=> 'form_search' %>
+    <h2>Trees View</h2>
+    <p><span><%= @roots.count %></span> roots<p>
+    <%= render :partial=> 'form' %>
+    <ul class="tree">
+        <% @roots.each do |root| %>
+        <li>
+            <details>
+                <summary>
+                    <%= link_to root.text, root_path(root.id) %>
+                </summary>
+                <ul>
+                    <% root.concepts.each do |concept| %>
+                    <li>
+                        <details>
+                            <summary>
+                                <%= link_to concept.text, concept_path(concept.id) %>
+                            </summary>
+                            <ul>
+                                <% concept.linking_concepts.each do |lc| %>
+                                <li>
+                                    <%= link_to lc.text, concept_path(lc.id) %>
+                                </li>
+                                <% end %>
+                            </ul>
+                        </details>
+                    </li>
+                    <% end %>
+                </ul>
 
-<h2>All Roots</h2>
-<% @roots.each do |root| %>
-    <div>
-        <div class="root-line">
-            <h3><%= root.text %></h3>
-            <div class="controls">
-                <button type="button" class="btn btn-outline-success"><%= link_to 'Edit', edit_root_path(root.id) %></button>
-                <button type="button" class="btn btn-outline-danger"><%= link_to 'Delete', root_path(root.id), :method=> 'delete' %></button>
-            </div>
-        </div>
+            </details>
+        </li>
+        <% end %>
+    </ul>
+</div>
 
-        <div class="related-concepts">
-            <% root.concepts.each do |concept| %>
-            <p>
-                <%= link_to concept.text, concept_path(concept.id) %>
-            </p>
-            <% end %>
-        </div>
-
-    </div>
-<% end %>

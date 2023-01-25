@@ -1,18 +1,25 @@
-<h1>Sign up</h1>
-
-<% if @user.errors.any? %>
-    <ol>
-        <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+<div class="guest">
+    <h1>Vocabees</h1>
+    <p>It simply works.</p>
+    <div class="signup">
+        <h2>Create a new account</h2>
+        <p>It's quick and easy.</p>
+        <hr>
+        <% if @user.errors.any? %>
+        <ol>
+            <% @user.errors.full_messages.each do |msg| %>
+                <li class="error"><%= msg %></li>
+            <% end %>
+        </ol>
         <% end %>
-    </ol>
-<% end %>
-<%= form_for @user do |f| %>
-    <%= f.label :email, :class => 'form-label' %>
-    <%= f.email_field :email, :class => 'form-control' %>
-    <%= f.label :password, :class => 'form-label' %>
-    <%= f.password_field :password, :class => 'form-control' %>
-    <%= f.label :password_confirmation, :class => 'form-label' %>
-    <%= f.password_field :password_confirmation, :class => 'form-control' %>
-    <%= f.submit 'Sign up!', :class => 'btn btn-success btn-lg' %>
-<% end %>
+        <%= form_for @user do |f| %>
+            <%= f.email_field :email, placeholder: "Email address" %>
+            <%= f.password_field :password, placeholder: "New password" %>
+            <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
+            <%= f.submit 'Sign up', class: "btn-signup" %>
+        <% end %>
+        <a href="/login">Already have an account?</a>
+    </div>
+
+</div>
+
