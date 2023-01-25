@@ -1,34 +1,40 @@
 <%= form_for @concept do |f| %>
-    <div class="mb-3">
-        <%= f.label :text, 'Concept', :class => 'form-label' %>
+    <div>
+        <%= f.label :text, 'Concept' %>
         <%= f.text_field :text,  :class => 'form-control' %>
     </div>
 
-    <div class="mb-3">
-        <%= f.label :meaning, :class => 'form-label' %>
+    <div>
+        <%= f.label :meaning %>
         <%= f.text_area :meaning, :class => 'form-control', :row => '3' %>
     </div>
-    <div class="mb-3">
-        <%= f.label :image, :class => 'form-label' %>
+    <div>
+        <%= f.label :image %>
         <%= f.text_area :image, :placeholder => "Search image or enter a link",:class => 'form-control', :row => '3' %>
     </div>
-    
+
     <script async src="https://cse.google.com/cse.js?cx=61e59828d2a624953">
     </script>
     <div class="gcse-search"></div>
 
-    <div class="mb-3">
-        <%= f.label :example, :class => 'form-label' %>
+    <div>
+        <%= f.label :example %>
         <%= f.text_area :example, :class => 'form-control', :row => '6' %>
     </div>
-    <div class="mb-3">
-        <%= f.label :note, :class => 'form-label' %>
+    <div>
+        <%= f.label :note %>
         <%= f.text_area :note, :class => 'form-control', :row => '3' %>
     </div>
 
-    <div class="mb-3">
+    <div>
+        <%= f.label :root_ids, 'Related roots' %>
         <%= f.collection_check_boxes :root_ids, Root.all.sort, :id, :text %>
     </div>
 
-    <%= f.submit %>
+    <div>
+        <%= f.label :linking_concept_ids, 'Linking concepts' %>
+        <%= f.collection_check_boxes :linking_concept_ids, Concept.all.sort, :id, :text %>
+    </div>
+
+    <%= f.submit 'Update' %>
 <% end %>

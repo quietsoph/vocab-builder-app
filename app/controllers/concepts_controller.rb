@@ -1,17 +1,12 @@
 class ConceptsController < ApplicationController
-  before_action :set_query
-
-  def set_query
-    @query = Concept.ransack(params[:q])
-  end
 
   def index
-    # @concepts = Concept.all
-
-    @query = Concept.search(params[:q])
-    @concepts = @query.result
-    p "query now #{@query}"
-    p "concepts now #{@concepts_found}"
+    if params[:query].blank?
+      @concepts = Concept.all
+    else
+      @parameter = params[:query].downcase
+      @concepts = Concept.all.where("lower(text) LIKE :query", query: "%#{@parameter}%")
+    end
   end
 
   def new
@@ -45,6 +40,6 @@ class ConceptsController < ApplicationController
 
   private
   def concept_params
-    params.require(:concept).permit(:text, :meaning, :image, :example, :note, :root_ids => [])
+    params.require(:concept).permit(:text, :meaning, :image, :example, :note, :root_ids => [],:linking_concept_ids => [])
   end
 end

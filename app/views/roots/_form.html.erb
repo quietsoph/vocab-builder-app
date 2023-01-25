@@ -1,5 +1,5 @@
 <%= form_for @root do |f| %>
-    <%= f.text_field :text, placeholder: "New root" %>
+    <%= f.text_field :text, placeholder: "New root", required: true %>
     <%= f.submit 'Create' %>
 <% end %>
 

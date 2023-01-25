@@ -68,7 +68,7 @@ nav {
     text-align: right;
 }
 
-nav > * {
+nav>* {
     padding-right: 2rem;
     color: var(--main-text-color);
 }
@@ -90,7 +90,8 @@ nav > * {
     color: #CC5C28;
 }
 
-.login, .signup {
+.login,
+.signup {
     width: 450px;
     display: flex;
     flex-direction: column;
@@ -108,17 +109,19 @@ nav > * {
     margin-top: 1rem;
 }
 
-.login input, .signup input {
+.login input,
+.signup input {
     width: 95%;
     margin: 1rem;
 }
 
 .login input[type="submit"] {
-    background-color: var(--blue-color) ;
+    background-color: var(--blue-color);
     border: none;
     color: white;
     font-weight: bolder;
 }
+
 /* -------------------------Styling signup-------------------- */
 /* Share some common styles for inputs with login page, refer to "styling login"--*/
 .btn-signup {
@@ -140,92 +143,92 @@ nav > * {
 
 /* -----------------------Style tree view --------------------------- */
 .tree {
-    --spacing : 4rem;
-    --radius  : 12px;
+    --spacing: 4rem;
+    --radius: 12px;
     display: flex;
     flex-flow: row wrap;
-  }
+}
 
-  .tree li {
-    display      : block;
-    position     : relative;
-    padding-left : calc(2 * var(--spacing) - var(--radius) - 5px);
+.tree li {
+    display: block;
+    position: relative;
+    padding-left: calc(2 * var(--spacing) - var(--radius) - 5px);
     padding-top: 10px;
     margin-left: 1rem;
-  }
+}
 
-  .tree ul {
-    margin-left  : calc(var(--radius) - var(--spacing));
-    padding-left : 0;
-  }
+.tree ul {
+    margin-left: calc(var(--radius) - var(--spacing));
+    padding-left: 0;
+}
 
-  .tree ul li{
-    border-left : 2px solid #ddd;
-  }
+.tree ul li {
+    border-left: 2px solid #ddd;
+}
 
-  .tree ul li:last-child{
-    border-color : transparent;
-  }
+.tree ul li:last-child {
+    border-color: transparent;
+}
 
-  .tree ul li::before{
-    content      : '';
-    display      : block;
-    position     : absolute;
-    top          : calc(var(--spacing) / -2);
-    left         : -2px;
-    width        : calc(var(--spacing) + 2px);
-    height       : calc(var(--spacing) + 1px);
-    border       : solid #ddd;
-    border-width : 0 0 2px 2px;
-  }
+.tree ul li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(var(--spacing) / -2);
+    left: -2px;
+    width: calc(var(--spacing) + 2px);
+    height: calc(var(--spacing) + 1px);
+    border: solid #ddd;
+    border-width: 0 0 2px 2px;
+}
 
-  .tree summary{
-    display : block;
-    cursor  : pointer;
-  }
+.tree summary {
+    display: block;
+    cursor: pointer;
+}
 
-  .tree summary::marker,
-  .tree summary::-webkit-details-marker{
-    display : none;
-  }
+.tree summary::marker,
+.tree summary::-webkit-details-marker {
+    display: none;
+}
 
-  .tree summary:focus {
-    outline : none;
-  }
+.tree summary:focus {
+    outline: none;
+}
 
-  .tree summary:focus-visible{
-    outline : 1px dotted #000;
-  }
+.tree summary:focus-visible {
+    outline: 1px dotted #000;
+}
 
-  .tree li::after,
-  .tree summary::before{
-    content       : '';
-    display       : block;
-    position      : absolute;
-    top           : calc(var(--spacing) / 2 - var(--radius));
-    left          : calc(var(--spacing) - var(--radius) - 1px);
-    width         : calc(2 * var(--radius));
-    height        : calc(2 * var(--radius));
-    border-radius : 50%;
-    background    : #ddd;
-  }
+.tree li::after,
+.tree summary::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(var(--spacing) / 2 - var(--radius));
+    left: calc(var(--spacing) - var(--radius) - 1px);
+    width: calc(2 * var(--radius));
+    height: calc(2 * var(--radius));
+    border-radius: 50%;
+    background: #ddd;
+}
 
-  .tree summary::before{
-    content     : '+';
-    z-index     : 1;
-    background  : var(--pale-color);
-    color       : #fff;
-    line-height : calc(2 * var(--radius) - 2px);
-    text-align  : center;
-  }
+.tree summary::before {
+    content: '+';
+    z-index: 1;
+    background: var(--pale-color);
+    color: #fff;
+    line-height: calc(2 * var(--radius) - 2px);
+    text-align: center;
+}
 
-  .tree details[open] > summary::before{
-    content : '−';
-  }
+.tree details[open]>summary::before {
+    content: '−';
+}
 
-  /* --------------------------Styling roots page '/roots------------------- */
+/* --------------------------Styling roots page '/roots------------------- */
 
-.roots {
+.roots, .concepts {
     color: var(--main-text-color);
     margin-bottom: 2.5rem;
     display: flex;
@@ -235,25 +238,16 @@ nav > * {
     border: 1px solid red;
 }
 
-.roots form {
-    border: 1px solid red;
+.roots form, .concepts form {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin: 3rem 0;
 }
 
-.roots a {
-    color: var(--main-text-color);
-}
-
-.roots a:hover {
-    color: var(--blue-color);
-}
-
-.roots input[type="text"] {
+.roots input[type="text"], .concepts input[type="text"] {
     height: 60px;
     width: 60%;
-    /* min-width: 300px; */
 }
 
 .roots input[type="submit"] {
@@ -268,11 +262,47 @@ nav > * {
     background-color: var(--blue-color);
 }
 
-
-.roots h2, p {
-    text-align: center;
+.roots input[name="root[text]"] {
+    height: 45px;
 }
 
-.roots h2, span {
+
+.roots h2,
+.root h2 {
+    font-size: 4rem;
     font-weight: bolder;
+    margin-top: 2rem;
+}
+
+.roots p {
+    margin-bottom: -1rem;
+}
+
+.roots span {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.roots a,
+.root a {
+    color: var(--main-text-color);
+}
+
+.roots a:hover {
+    color: var(--blue-color);
+}
+
+/* --------------------------Style the show page of root------------------ */
+.root {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.controls {
+    display: flex;
+}
+
+.controls a {
+    margin-left: 1rem;
+    text-decoration: underline;
 }

@@ -16,9 +16,20 @@ class RootsController < ApplicationController
     redirect_to roots_path
   end
 
+  def edit
+    @root = Root.find(params[:id])
+  end
+
+
   def update
     @root = Root.find params[:id]
     @root.update root_params
+    redirect_to root_path
+  end
+
+  def destroy
+    @root = Root.find params[:id]
+    @root.destroy
     redirect_to roots_path
   end
 

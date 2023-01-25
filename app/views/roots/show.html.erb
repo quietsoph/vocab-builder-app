@@ -1,28 +1,35 @@
-<ul class="tree">
-    <li>
-        <details open>
-            <summary>
-                <%= @root.text %>
-            </summary>
-            <ul>
-                <% @root.concepts.each do |concept| %>
-                <li>
-                    <details open>
-                        <summary>
-                            <%= link_to concept.text, concept_path(concept.id) %>
-                        </summary>
-                        <ul>
-                            <% concept.linking_concepts.each do |lc| %>
-                            <li>
-                                <%= link_to lc.text, concept_path(lc.id) %>
-                            </li>
-                            <% end %>
-                        </ul>
-                    </details>
-                </li>
-                <% end %>
-            </ul>
+<div class="container root">
+    <h2>Tree View </h2>
+    <div class="controls">
+        <%= link_to 'Edit', edit_root_path(@root.id) %>
+        <%= link_to 'Delete', root_path(@root.id), :method=> 'delete' %>
+    </div>
+    <ul class="tree">
+        <li>
+            <details open>
+                <summary>
+                    <%= @root.text %>
+                </summary>
+                <ul>
+                    <% @root.concepts.each do |concept| %>
+                    <li>
+                        <details open>
+                            <summary>
+                                <%= link_to concept.text, concept_path(concept.id) %>
+                            </summary>
+                            <ul>
+                                <% concept.linking_concepts.each do |lc| %>
+                                <li>
+                                    <%= link_to lc.text, concept_path(lc.id) %>
+                                </li>
+                                <% end %>
+                            </ul>
+                        </details>
+                    </li>
+                    <% end %>
+                </ul>
+            </details>
+        </li>
+    </ul>
 
-        </details>
-    </li>
-</ul>
+</div>

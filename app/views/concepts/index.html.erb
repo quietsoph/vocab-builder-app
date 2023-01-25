@@ -1,11 +1,28 @@
+<div class="container concepts">
+    <%= render 'concepts/form_search' %>
 
-<%= render 'concepts/form_search' %>
+    <%= link_to "New Concept", new_concept_path %>
 
-<button type="button" class="btn btn-outline-primary"><%= link_to "New Concept", new_concept_path %></button>
+    <h2 class="text-conter"><%= pluralize(@concepts.count, 'Concepts') %></h2>
+    <ul class="tree">
+        <% @concepts.each do |concept| %>
+        <li>
+            <details>
+                <summary>
+                    <%= link_to concept.text, concept_path(concept.id) %>
+                </summary>
+                <ul>
+                    <% concept.linking_concepts.each do |lc| %>
+                    <li>
+                        <%= link_to lc.text, concept_path(lc.id) %>
+                    </li>
+                    <% end %>
+                </ul>
+            </details>
+        </li>
+        <% end %>
+    </ul>
 
-<h2 class="text-conter"><%= pluralize(@concepts.count, 'Concepts') %></h2>
-<% @concepts.each do |concept| %>
-    <p>
-        <%= link_to concept.text, concept_path(concept.id) %>
-    </p>
-<% end %>
+</div>
+
+
