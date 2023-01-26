@@ -5,6 +5,11 @@
     </div>
 
     <div class="flex">
+        <%= f.label :category %>
+        <%= collection_select(:concept, :category_id, Category.all,:id, :name, { prompt: "Select category"}) %>
+    </div>
+
+    <div class="flex">
         <%= f.label :meaning %>
         <%= f.text_area :meaning, :row => '3', :placeholder => "Meaning..." %>
     </div>
@@ -21,6 +26,17 @@
         <%= f.label :example %>
         <%= f.text_area :example, :row => '6', :placeholder => "Enter after each example to separate them (if any)" %>
     </div>
+
+    <div class="flex">
+        <%= f.label :source %>
+        <%= f.text_field :source, :placeholder => "How do you know the concept?" %>
+    </div>
+
+    <div class="flex">
+        <%= f.label :translation %>
+        <%= f.text_field :translation, :placeholder => "Well, you may need this" %>
+    </div>
+
     <div class="flex">
         <%= f.label :note %>
         <%= f.text_area :note, :row => '3',:placeholder => "Enter after each note to separate them (if any)" %>

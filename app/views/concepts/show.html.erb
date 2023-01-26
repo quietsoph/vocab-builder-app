@@ -10,6 +10,10 @@
             <%= image_tag @concept.image %>
         <% end %>
         <div class="content">
+
+            <p class="label">Category:</p>
+            <p><%= @concept.category.name.capitalize() %></p>
+
             <p class="label">Meaning:</p>
             <p><%= @concept.meaning.capitalize() %></p>
 
@@ -18,10 +22,21 @@
                 <p><%= @concept.example.capitalize() %></p>
             <% end %>
 
+            <% if @concept.source.present? %>
+            <p class="label">Source:</p>
+            <p><%= @concept.source.capitalize() %></p>
+            <% end %>
+
+            <% if @concept.translation.present? %>
+            <p class="label">Translation:</p>
+            <p><%= @concept.translation.capitalize() %></p>
+            <% end %>
+
             <% if @concept.note.present? %>
                 <p class="label">Note:</p>
                 <p><%= @concept.note %></p>
             <% end %>
+
 
             <div class="related-roots">
                 <p class="label">Related roots:</p>

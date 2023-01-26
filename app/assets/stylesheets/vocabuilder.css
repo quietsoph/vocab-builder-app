@@ -37,7 +37,7 @@ h2 {
 }
 
 /* -------------Form style -------------------------------- */
-input {
+input, select {
     padding: 10px;
     border-radius: var(--standard-border-radius);
     border: 1px solid var(--standard-border-color);
@@ -50,7 +50,7 @@ form {
     margin-top: 3rem;
 }
 
-input[type="text"] {
+input[type="text"], select {
     height: 60px;
     width: 60%;
 }
