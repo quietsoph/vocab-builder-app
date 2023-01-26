@@ -8,19 +8,19 @@
         <li>
             <details>
                 <summary>
-                    <%= link_to root.text, root_path(root.id) %>
+                    <%= link_to root.text.capitalize(), root_path(root.id) %>
                 </summary>
                 <ul>
                     <% root.concepts.each do |concept| %>
                     <li>
                         <details>
                             <summary>
-                                <%= link_to concept.text, concept_path(concept.id) %>
+                                <%= link_to concept.text.capitalize(), concept_path(concept.id) %>
                             </summary>
                             <ul>
                                 <% concept.linking_concepts.each do |lc| %>
                                 <li>
-                                    <%= link_to lc.text, concept_path(lc.id) %>
+                                    <%= link_to lc.text.capitalize(), concept_path(lc.id) %>
                                 </li>
                                 <% end %>
                             </ul>

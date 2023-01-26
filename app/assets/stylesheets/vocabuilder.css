@@ -360,12 +360,13 @@ label {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
     margin-top: 2rem;
 }
 
 .concept-show img, .content {
     width: 45%;
-    object-fit: cover;
+    object-fit: contain;
     min-width: 450px;
     margin-left: 2rem;
 }

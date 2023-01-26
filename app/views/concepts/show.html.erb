@@ -11,11 +11,11 @@
         <% end %>
         <div class="content">
             <p class="label">Meaning:</p>
-            <p><%= @concept.meaning %></p>
+            <p><%= @concept.meaning.capitalize() %></p>
 
             <% if @concept.example.present? %>
                 <p class="label">Example:</p>
-                <p><%= @concept.example %></p>
+                <p><%= @concept.example.capitalize() %></p>
             <% end %>
 
             <% if @concept.note.present? %>
@@ -28,7 +28,7 @@
                     <% if @concept.roots.present? %>
                     <ul>
                         <% @concept.roots.each do |root| %>
-                        <li><%= link_to root.text, root_path(root.id) %></li>
+                        <li><%= link_to root.text.capitalize(), root_path(root.id) %></li>
                         <% end %>
                     </ul>
                         <% else %>
@@ -41,10 +41,9 @@
                 <% if @concept.linking_concepts.present? %>
                 <ul>
                     <% @concept.linking_concepts.each do |lc| %>
-                    <li><%= link_to lc.text, concept_path(lc.id) %></li>
+                    <li><%= link_to lc.text.capitalize(), concept_path(lc.id) %></li>
                     <% end %>
                 </ul>
-                <% end %>
                 <% else %>
                     <p><i>No linking concepts added</i></p>
                 <% end %>
