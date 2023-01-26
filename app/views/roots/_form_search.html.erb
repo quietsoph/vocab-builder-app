@@ -1,3 +1,4 @@
+<!-- SEARCH FORM FOR ROOT -->
 <%= form_tag(roots_path, method: :get) do %>
     <%= text_field_tag :query, params[:query], placeholder: "Search root" %>
     <%= submit_tag ("Search") %>

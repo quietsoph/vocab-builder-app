@@ -1,3 +1,5 @@
+<!-- FORM FOR SEARCHING CONCEPTS -->
+
 <%= form_tag(concepts_path, method: :get) do %>
     <%= text_field_tag :query, params[:query], placeholder: "Search concept" %>
     <%= submit_tag ("Search") %>
