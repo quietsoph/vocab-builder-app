@@ -1,40 +1,44 @@
 <%= form_for @concept do |f| %>
-    <div>
+    <div class="flex">
         <%= f.label :text, 'Concept' %>
-        <%= f.text_field :text,  :class => 'form-control' %>
+        <%= f.text_field :text, required: true, :placeholder => "New concept..." %>
     </div>
 
-    <div>
+    <div class="flex">
         <%= f.label :meaning %>
-        <%= f.text_area :meaning, :class => 'form-control', :row => '3' %>
+        <%= f.text_area :meaning, :row => '3', :placeholder => "Meaning..." %>
     </div>
-    <div>
+    <div class="flex">
         <%= f.label :image %>
-        <%= f.text_area :image, :placeholder => "Search image or enter a link",:class => 'form-control', :row => '3' %>
+        <%= f.text_area :image, :placeholder => "Search image or enter a link", :row => '3' %>
     </div>
 
-    <script async src="https://cse.google.com/cse.js?cx=61e59828d2a624953">
-    </script>
-    <div class="gcse-search"></div>
+    <!-- <script async src="https://cse.google.com/cse.js?cx=61e59828d2a624953">
+    </script> -->
+    <!-- <div class="gcse-search"></div> -->
 
-    <div>
+    <div class="flex">
         <%= f.label :example %>
-        <%= f.text_area :example, :class => 'form-control', :row => '6' %>
+        <%= f.text_area :example, :row => '6', :placeholder => "Enter after each example to separate them (if any)" %>
     </div>
-    <div>
+    <div class="flex">
         <%= f.label :note %>
-        <%= f.text_area :note, :class => 'form-control', :row => '3' %>
+        <%= f.text_area :note, :row => '3',:placeholder => "Enter after each note to separate them (if any)" %>
     </div>
 
     <div>
         <%= f.label :root_ids, 'Related roots' %>
-        <%= f.collection_check_boxes :root_ids, Root.all.sort, :id, :text %>
+        <div class="checkboxes">
+            <%= f.collection_check_boxes :root_ids, Root.all.sort, :id, :text %>
+        </div>
     </div>
 
     <div>
         <%= f.label :linking_concept_ids, 'Linking concepts' %>
-        <%= f.collection_check_boxes :linking_concept_ids, Concept.all.sort, :id, :text %>
+        <div class="checkboxes">
+            <%= f.collection_check_boxes :linking_concept_ids, Concept.all.sort, :id, :text %>
+        </div>
     </div>
 
-    <%= f.submit 'Update' %>
+    <%= f.submit %>
 <% end %>

@@ -1,8 +1,8 @@
 <div class="container roots">
     <%= render :partial=> 'form_search' %>
-    <h2>Combs</h2>
-    <p><span><%= @roots.count %></span> roots<p>
+    <hr>
     <%= render :partial=> 'form' %>
+    <h2><%= pluralize(@roots.count, 'roots') %></h2>
     <ul class="tree">
         <% @roots.each do |root| %>
         <li>

@@ -1,9 +1,6 @@
 <div class="container concepts">
     <%= render 'concepts/form_search' %>
-
-    <%= link_to "New Concept", new_concept_path %>
-
-    <h2 class="text-conter"><%= pluralize(@concepts.count, 'Concepts') %></h2>
+    <h2><%= pluralize(@concepts.count, 'concepts') %></h2>
     <ul class="tree">
         <% @concepts.each do |concept| %>
         <li>

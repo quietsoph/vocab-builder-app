@@ -31,12 +31,45 @@ a:hover {
     color: var(--blue-color);
 }
 
+h2 {
+    font-size: 4rem;
+    margin-top: 2rem;
+}
+
+/* -------------Form style -------------------------------- */
 input {
     padding: 10px;
     border-radius: var(--standard-border-radius);
     border: 1px solid var(--standard-border-color);
 }
 
+form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+input[type="text"] {
+    height: 60px;
+    width: 60%;
+}
+
+input[type="submit"] {
+    background-color: var(--pale-color);
+    width: 10rem;
+    color: white;
+    margin-left: 1rem;
+    border: none;
+}
+
+input[value="Search"] {
+    background-color: var(--blue-color);
+    border: none;
+    margin-left: 1rem;
+    color: white;
+    width: 10rem;
+}
 
 /* ---------------Layout ------------------------------------- */
 body {
@@ -88,6 +121,11 @@ nav>* {
     font-size: 5vw;
     font-weight: bolder;
     color: #CC5C28;
+}
+
+.login form,.signup form  {
+    flex-direction: column;
+    margin-top: 1rem;
 }
 
 .login,
@@ -227,60 +265,13 @@ nav>* {
 }
 
 /* --------------------------Styling roots page '/roots------------------- */
-
-.roots, .concepts {
+.roots, .concepts,.concept-info {
     color: var(--main-text-color);
-    margin-bottom: 2.5rem;
+    margin-bottom: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
-}
-
-.roots form, .concepts form {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 3rem 0;
-}
-
-.roots input[type="text"], .concepts input[type="text"] {
-    height: 60px;
-    width: 60%;
-}
-
-.roots input[type="submit"] {
-    background-color: var(--pale-color);
-    width: 10rem;
-    color: white;
-    margin-left: 1rem;
-    border: none;
-}
-
-.roots input[value="Search"] {
-    background-color: var(--blue-color);
-}
-
-.roots input[name="root[text]"] {
-    height: 45px;
-}
-
-
-.roots h2,
-.root h2 {
-    font-size: 4rem;
-    font-weight: bolder;
-    margin-top: 2rem;
-}
-
-.roots p {
-    margin-bottom: -1rem;
-}
-
-.roots span {
-    font-size: 2rem;
-    font-weight: bolder;
 }
 
 .roots a,
@@ -292,7 +283,7 @@ nav>* {
     color: var(--blue-color);
 }
 
-/* --------------------------Style the show page of root------------------ */
+/* --------------------------Style the show page of each root------------------ */
 .root {
     margin-left: 50%;
     transform: translateX(-50%);
@@ -305,4 +296,85 @@ nav>* {
 .controls a {
     margin-left: 1rem;
     text-decoration: underline;
+}
+
+/* style concept-info (applicable for both add and update concept page ------------------------ */
+.concept-info form {
+    flex-direction: column;
+}
+
+.flex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    padding-left: 1rem;
+    font-weight: bolder;
+}
+
+.flex > * {
+    width: 100% !important;
+}
+
+.concept-info textarea {
+    height: 100px;
+    padding: 1rem;
+    border-radius: var(--standard-border-radius);
+    border-color: var(--pale-color);
+}
+
+.checkboxes :not(input[type="checkbox"]) {
+    width: auto !important;
+    font-weight: 400;
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.checkboxes input[type="checkbox"] {
+    margin-left: 2rem !important;
+}
+
+.concept-info input[type="submit"] {
+    width: 90%;
+    margin: 1rem auto 0;
+}
+
+/* ----------------------Style the show page-------------------------- */
+.concept-show, .users-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.concept-show h2 {
+    text-align: center;
+}
+
+.concept-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.concept-show img, .content {
+    width: 45%;
+    object-fit: cover;
+    min-width: 450px;
+    margin-left: 2rem;
+}
+
+.content .label {
+    font-weight: bolder;
+}
+
+.content ul, .content p:not(.label), .content i {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
 }

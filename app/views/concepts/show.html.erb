@@ -1,38 +1,54 @@
-<div class="container">
+<div class="container concept-show">
     <h2 class="text-capitalize"><%= @concept.text %></h2>
     <div class="controls">
         <%= link_to 'Edit', edit_concept_path(@concept.id) %>
         <%= link_to 'Delete', concept_path(@concept.id), :method=> 'delete' %>
     </div>
-    <div>
+
+    <div class="concept-details">
         <% if @concept.image.present? %>
-            <%= image_tag @concept.image, :class => 'rounded float-start' %>
+            <%= image_tag @concept.image %>
         <% end %>
+        <div class="content">
+            <p class="label">Meaning:</p>
+            <p><%= @concept.meaning %></p>
 
-        <p>Meaning:</p>
-        <p><%= @concept.meaning %></p>
-
-        <% if @concept.example.present? %>
-            <p>Example: </br><%= @concept.example %></p>
-        <% end %>
-
-        <% if @concept.note.present? %>
-            <p>Note: </br><%= @concept.note %></p>
-        <% end %>
-
-        <div class="related-roots">
-            <p>Related roots</p>
-            <% @concept.roots.each do |root| %>
-                <p><%= link_to root.text, root_path(root.id) %></p>
+            <% if @concept.example.present? %>
+                <p class="label">Example:</p>
+                <p><%= @concept.example %></p>
             <% end %>
-        </div>
 
-        <div class="linking-concepts">
-            <p>Linking concepts</p>
-            <% @concept.linking_concepts.each do |lc| %>
-                <%= link_to lc.text, concept_path(lc.id) %>
+            <% if @concept.note.present? %>
+                <p class="label">Note:</p>
+                <p><%= @concept.note %></p>
             <% end %>
+
+            <div class="related-roots">
+                <p class="label">Related roots:</p>
+                    <% if @concept.roots.present? %>
+                    <ul>
+                        <% @concept.roots.each do |root| %>
+                        <li><%= link_to root.text, root_path(root.id) %></li>
+                        <% end %>
+                    </ul>
+                        <% else %>
+                        <p><i>No related roots added.</i></p>
+                    <% end %>
+            </div>
+
+            <div class="linking-concepts">
+                <p class="label">Linking concepts:</p>
+                <% if @concept.linking_concepts.present? %>
+                <ul>
+                    <% @concept.linking_concepts.each do |lc| %>
+                    <li><%= link_to lc.text, concept_path(lc.id) %></li>
+                    <% end %>
+                </ul>
+                <% end %>
+                <% else %>
+                    <p><i>No linking concepts added</i></p>
+                <% end %>
+            </div>
         </div>
     </div>
-
 </div>
