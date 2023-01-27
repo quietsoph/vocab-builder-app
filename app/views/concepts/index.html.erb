@@ -1,6 +1,6 @@
 <div class="container concepts">
     <%= render 'concepts/form_search' %>
-    <h2><%= pluralize(@concepts.count, 'concepts') %></h2>
+    <h2><%= pluralize(@current_user.concepts.count, 'concepts') %></h2>
     <ul class="tree">
         <% @current_user.concepts.each do |concept| %>
         <li>
