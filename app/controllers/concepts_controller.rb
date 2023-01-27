@@ -42,7 +42,7 @@ class ConceptsController < ApplicationController
   def destroy
     @concept = Concept.find(params[:id])
     @concept.destroy
-    redirect_to concepts_ls path
+    redirect_to concepts_path
   end
 
   private
