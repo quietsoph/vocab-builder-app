@@ -47,14 +47,14 @@
     <div>
         <%= f.label :root_ids, 'Related roots' %>
         <div class="checkboxes">
-            <%= f.collection_check_boxes :root_ids, Root.all.sort, :id, :text %>
+            <%= f.collection_check_boxes :root_ids, @current_user.roots.all.sort, :id, :text %>
         </div>
     </div>
 
     <div>
         <%= f.label :linking_concept_ids, 'Linking concepts' %>
         <div class="checkboxes">
-            <%= f.collection_check_boxes :linking_concept_ids, Concept.all.sort, :id, :text %>
+            <%= f.collection_check_boxes :linking_concept_ids, @current_user.concepts.all.sort, :id, :text %>
         </div>
     </div>
 

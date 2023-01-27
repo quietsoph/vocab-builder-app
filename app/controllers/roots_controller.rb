@@ -1,4 +1,6 @@
 class RootsController < ApplicationController
+  before_action :check_for_login
+
   def index
     # INCLUDE THE SEARCH FOR ROOT INSIDE THE INDEX PAGE
     if params[:query].blank?
@@ -19,7 +21,8 @@ class RootsController < ApplicationController
   end
 
   def create
-    @root = Root.create root_params
+    root = Root.create root_params
+    @current_user.roots << root
     redirect_to roots_path
   end
 

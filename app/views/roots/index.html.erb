@@ -2,9 +2,10 @@
     <%= render :partial=> 'form_search' %>
     <hr>
     <%= render :partial=> 'form' %>
-    <h2><%= pluralize(@roots.count, 'roots') %></h2>
+    <h2><%= pluralize(@current_user.roots.count, 'roots') %></h2>
     <ul class="tree">
-        <% @roots.each do |root| %>
+        <% @current_user.roots.each do |root| %>
+        <%# raise 'hell' %>
         <li>
             <details>
                 <summary>
