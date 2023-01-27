@@ -2,7 +2,7 @@
     <%= render 'concepts/form_search' %>
     <h2><%= pluralize(@concepts.count, 'concepts') %></h2>
     <ul class="tree">
-        <% @concepts.each do |concept| %>
+        <% @current_user.concepts.each do |concept| %>
         <li>
             <details>
                 <summary>
