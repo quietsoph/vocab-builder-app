@@ -6,11 +6,12 @@
 
 ## Problem
 
-**Case 1**
+**User Story 1**
 
 Sally, a Vietnamese software engineer with limited proficiency in English, aims to pursue a Master's degree in Sydney. However, she must first pass an English exam. She has a year to prepare, but is strugglng to find effective ways to enhance her vocabulary.
 
-**Case2**
+**User Story 2**
+
 Nam is preparing an application to pursue an MBA in the US and is studying for the GMAT with a goal of achieving a 700 out of 800. However, in his previous attempt, he only scored 600 due to poor performance in the Verbal reasoning. His limited vocabulary was one of the factors that contributed to his poor performance. He is currently seeking alternative methods to expand his vocabulary beyond the use of flashcards.
 
 
@@ -20,7 +21,7 @@ Nam is preparing an application to pursue an MBA in the US and is studying for t
 3. Word association: This method involves linking new vocabulary with words that are already known. For example, they could be similar or contrast.
 4. Word families: This method involves learning words that are related by their roots, prefixes or suffixes.
 
-## The solution
+## Solution
 
 **Vocabees** is designed to help learners expand their vocabulary using research-based methods. With a focus on contextual learning, mnemonics, word association, and word families, Vocabees offers a comprehensive approach to vocabulary acquisition.
 
@@ -48,7 +49,7 @@ Example: The concept 'love' can be associated with other concepts like 'romance'
 - PostgreSQL
 - Git
 ## Challenges
-1. Refine database design to fp
+
 
 ## For improvements
 
