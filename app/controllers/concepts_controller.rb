@@ -18,7 +18,7 @@ class ConceptsController < ApplicationController
   # CREATE
   def create
     @concept = Concept.create concept_params
-    redirect_to concepts_path
+    redirect_to concept_path
   end
 
   # EDIT FORM
