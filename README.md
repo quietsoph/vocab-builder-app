@@ -8,18 +8,47 @@
 
 **Case 1**
 
-Sally, a Vietnamese software engineer with limited English skills, wants to pursue a Master's degree in Sydney but needs to take an English exam. She has one year to prepare, but is struggling to find effective method to expand here vocabulary.
+Sally, a Vietnamese software engineer with limited proficiency in English, aims to pursue a Master's degree in Sydney. However, she must first pass an English exam. She has a year to prepare, but is strugglng to find effective ways to enhance her vocabulary.
 
 **Case2**
-Nam wants to pursue a MBA degree in United States. Preparing for the application, he is studying to take GMAT with the target score of 700 (out of 800). A month ago, he took GMAT and the score is way lower than what he expected. He decided to take another one in next 6 months. One of his focus is to improve the score of Verbal section in the next exam. In the past, he used flashcards to learn new words.
+Nam is preparing an application to pursue an MBA in the US and is studying for the GMAT with a goal of achieving a 700 out of 800. However, in his previous attempt, he only scored 600 due to poor performance in the Verbal reasoning. His limited vocabulary was one of the factors that contributed to his poor performance. He is currently seeking alternative methods to expand his vocabulary beyond the use of flashcards.
 
-## Research-backed solution
 
-## Techstack
+## Research-backed vocabulary learning methods
+1. Contextual Learning: Research has shown that we learn words effectively when we encounter them in meaningful contexts.
+2. Mnemonics: This method involves associating new vocabulary with visual or audiotory cues to help with recall. This can be done through creating stories, images, or other memory aids.
+3. Word association: This method involves linking new vocabulary with words that are already known. For example, they could be similar or contrast.
+4. Word families: This method involves learning words that are related by their roots, prefixes or suffixes.
+
+## The solution
+
+**Vocabees** is designed to help learners expand their vocabulary using research-based methods. With a focus on contextual learning, mnemonics, word association, and word families, Vocabees offers a comprehensive approach to vocabulary acquisition.
 
 ## Features
+1. Word family building with roots, concepts and their associated concepts.
 
+Example:
+
+Word family for 'sleep' with the root 'sleep', with concepts like 'nap', 'slumber', 'rest', 'out like a light'. The concept 'nap' is similar to the concept 'catnap', which is called an associated concept of 'nap'.
+
+2. Support for mutiple families per concept.
+
+Example: The concept 'out like a light' can be a part of families like 'sleep', 'light'
+
+3. Ability to associate one concept with multiple other words.
+
+Example: The concept 'love' can be associated with other concepts like 'romance', 'affection', 'caring', etc.
+
+4. Search functionality for roots and concepts.
+5. User account features, including sign-up and sign-in.
+6. Ownership features to allow users to manage their own data.
+
+## Techstack
+- Ruby on Rails
+- PostgreSQL
+- Git
 ## Challenges
+1. Refine database design to fp
 
 ## For improvements
 
