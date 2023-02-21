@@ -1,10 +1,13 @@
 <div class="guest">
-    <h1>Vocabees</h1>
-    <p>It simply works.</p>
+    <div>
+        <h1>Vocabees</h1>
+        <p class="slogan">It simply works.</p>
+    </div>
+
     <div class="login">
-        <p class="error">
+        <ol class="error">
             <%= flash[:error] %>
-        </p>
+        </ol>
 
         <%= form_tag login_path do %>
             <%= email_field_tag :email, nil, placeholder: "Email address" %>
@@ -13,7 +16,7 @@
 
             <%= submit_tag "Log in" %>
         <% end %>
-        <hr>or
+        or
         <a href="/users/new"><input type="button" value="Create new account" class="btn-signup"></a>
     </div>
 </div>

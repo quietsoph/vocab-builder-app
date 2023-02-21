@@ -3,8 +3,9 @@
     --main-text-color: #2f1706;
     --standard-font-size: 18px;
     --standard-border-color: #f7b62b;
-    --standard-border-radius: 5px;
-    --standard-background-color: #cbcbcb;
+    --form-padding: 6px;
+    --standard-border-radius: 8px;
+    --standard-background-color: #f0f2f5;
     --pale-color: #f7b62b;
     --blue-color: #278eec;
 }
@@ -32,11 +33,20 @@ a:hover {
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: 3.2rem;
     margin-top: 2rem;
 }
 
-/* -------------Form style -------------------------------- */
+hr {
+    width: 95%;
+    color: inherit;
+}
+
+ol {
+    list-style-type: none;
+    width: 95%;
+}
+/* -------------General Form style -------------------------------- */
 input, select {
     padding: 10px;
     border-radius: var(--standard-border-radius);
@@ -47,12 +57,12 @@ form {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
 }
 
 input[type="text"], select {
     height: 60px;
-    width: 60%;
+    width: 396px;
 }
 
 input[type="submit"] {
@@ -118,33 +128,46 @@ nav>* {
 }
 
 .guest h1 {
-    font-size: 5vw;
+    font-size: 5rem;
     font-weight: bolder;
     color: #CC5C28;
 }
 
+.slogan {
+    margin-top: -6px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
 .login form,.signup form  {
     flex-direction: column;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
 }
 
 .login,
 .signup {
-    width: 450px;
+    width: 396px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--standard-border-color);
     border-radius: var(--standard-border-radius);
     background-color: white;
     margin-left: 50%;
+    margin-top: 2rem;
+    padding: 1.8rem 0;
     transform: translateX(-50%);
+    border: none;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+.signup {
+    padding-top: 0rem;
 }
 
 .error {
     color: red;
-    margin-top: 1rem;
+    text-align: left;
 }
 
 .login input,
@@ -162,21 +185,22 @@ nav>* {
 
 /* -------------------------Styling signup-------------------- */
 /* Share some common styles for inputs with login page, refer to "styling login"--*/
+
 .btn-signup {
     background-color: var(--pale-color);
     border: none;
     color: white;
     font-weight: bolder;
-    margin-bottom: 1rem;
 }
 
 .signup h2 {
     font-weight: bolder;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
 }
 
 .signup a {
     margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 /* -----------------------Style tree view --------------------------- */

@@ -54,7 +54,7 @@ Example: The concept 'love' can be associated with other concepts like 'romance'
 
 ## For improvements
 - [ ] Improve UI to be mobile-friendly.
-- [ ] Support repitition learning method.
+- [ ] Support repetition learning method.
 
 ## Acknowledgements
 The major part of project was completed during the 6th week of the Software Engineering Immersive at General Assembly (Sydney) instructed by Dido and Chris (CJ), who are great instructors.
