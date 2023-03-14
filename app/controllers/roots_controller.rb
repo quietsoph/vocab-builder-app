@@ -2,12 +2,12 @@ class RootsController < ApplicationController
   before_action :check_for_login
 
   def index
-    # INCLUDE THE SEARCH FOR ROOT INSIDE THE INDEX PAGE
+    # INCLUDE THE SEARCH INSIDE THE INDEX PAGE
     if params[:query].blank?
       @roots = Root.all
     else
       @parameter = params[:query].downcase
-      @roots = Root.all.where("lower(text) LIKE :query", query: "%#{@parameter}%")
+      @roots = Root.where("lower(text) LIKE :query", query: "%#{@parameter}%")
     end
 
     # NEW ROOT FORM INSIDE THE INDEX PAGE

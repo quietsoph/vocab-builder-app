@@ -1,5 +1,5 @@
 <!-- SEARCH FORM FOR ROOT -->
-<%= form_tag(roots_path, method: :get) do %>
-    <%= text_field_tag :query, params[:query], placeholder: "Search root" %>
+<%= form_tag("/roots/search", method: "get") do %>
+    <%= text_field_tag :query, params[:query], placeholder: "Search word families" %>
     <%= submit_tag ("Search") %>
 <% end %>

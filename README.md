@@ -60,5 +60,5 @@ Example: The concept 'love' can be associated with other concepts like 'romance'
 The major part of project was completed during the 6th week of the Software Engineering Immersive at General Assembly (Sydney) instructed by Dido and Chris (CJ), who are great instructors.
 
 ## Learning journal
-To be udpated
+
 

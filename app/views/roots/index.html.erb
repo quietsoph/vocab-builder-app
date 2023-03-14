@@ -1,15 +1,14 @@
 <div class="container roots">
-    <%= render :partial=> 'form_search' %>
-    <hr>
     <%= render :partial=> 'form' %>
-    <h2><%= pluralize(@current_user.roots.count, 'roots') %></h2>
+    <h2><%= pluralize(@current_user.roots.count, 'concept family') %></h2>
     <ul class="tree">
         <% @current_user.roots.each do |root| %>
         <%# raise 'hell' %>
         <li>
             <details>
                 <summary>
-                    <%= link_to root.text.capitalize(), root_path(root.id) %>
+                    <%= link_to root.text.upcase() , root_path(root.id) %>
+                    <span>(<%= pluralize(root.concepts.count, "concept") %>)</span>
                 </summary>
                 <ul>
                     <% root.concepts.each do |concept| %>

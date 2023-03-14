@@ -1,4 +1,5 @@
 class ConceptsController < ApplicationController
+  before_action :check_for_login
 
   def index
     # SEARCH INSIDE THE INDEX
