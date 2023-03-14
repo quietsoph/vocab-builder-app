@@ -42,7 +42,7 @@ Example: The concept 'love' can be associated with other concepts like 'romance'
 
 4. Search functionality for roots and concepts.
 5. User account features, including sign-up and sign-in.
-6. Ownership features to allow users to manage their own data.
+6. Users can only access their data once they are logged in.
 
 ## Techstack
 - Ruby on Rails

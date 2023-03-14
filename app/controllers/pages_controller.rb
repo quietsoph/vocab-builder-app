@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     # if there is a current user, direct them to index page of roots
     # else redirect them to the login page
     if @current_user.present?
-      redirect_to roots_path
+      redirect_to families_path
     else
       redirect_to login_path
     end

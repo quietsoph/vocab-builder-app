@@ -1,5 +1,5 @@
 class Concept < ApplicationRecord
-  has_and_belongs_to_many :roots
+  has_and_belongs_to_many :families
   belongs_to :category, :optional => true
 
   has_many :linkages

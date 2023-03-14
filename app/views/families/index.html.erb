@@ -1,19 +1,19 @@
-<div class="container root">
-    <h2>Tree View </h2>
-    <div class="controls">
-        <%= link_to 'Edit', edit_root_path(@root.id) %>
-        <%= link_to 'Delete', root_path(@root.id), :method=> 'delete' %>
-    </div>
+<div class="container families">
+    <%= render :partial=> 'form' %>
+    <h2><%= pluralize(@current_user.families.count, 'concept family') %></h2>
     <ul class="tree">
+        <% @current_user.families.each do |family| %>
+        <%# raise 'hell' %>
         <li>
-            <details open>
+            <details>
                 <summary>
-                    <%= @root.text.capitalize() %>
+                    <%= link_to family.text.upcase() , family_path(family.id) %>
+                    <span>(<%= pluralize(family.concepts.count, "concept") %>)</span>
                 </summary>
                 <ul>
-                    <% @root.concepts.each do |concept| %>
+                    <% family.concepts.each do |concept| %>
                     <li>
-                        <details open>
+                        <details>
                             <summary>
                                 <%= link_to concept.text.capitalize(), concept_path(concept.id) %>
                             </summary>
@@ -28,8 +28,10 @@
                     </li>
                     <% end %>
                 </ul>
+
             </details>
         </li>
+        <% end %>
     </ul>
-
 </div>
+
