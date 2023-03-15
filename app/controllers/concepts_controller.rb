@@ -19,7 +19,7 @@ class ConceptsController < ApplicationController
   # CREATE
   def create
     @concept = Concept.create concept_params
-    redirect_to concept_path
+    redirect_to concept_path(id: @concept.id)
   end
 
   # EDIT FORM
@@ -48,6 +48,6 @@ class ConceptsController < ApplicationController
 
   private
   def concept_params
-    params.require(:concept).permit(:text, :meaning, :image, :example, :note, :source, :translation, :category_id, :root_ids => [],:linking_concept_ids => [] )
+    params.require(:concept).permit(:text, :meaning, :image, :example, :note, :source, :translation, :category_id, :root_ids => [], :linking_concept_ids => [] )
   end
 end

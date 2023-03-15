@@ -57,3 +57,9 @@ gem "ransack", "~> 2.5"
 
 # form builder fromm Gov.uk design system
 gem 'govuk_design_system_formbuilder'
+
+# image analysis and transformation
+gem "image_processing", ">= 1.2"
+
+
+gem "aws-sdk-s3", require: false

@@ -5,5 +5,5 @@ class User < ApplicationRecord
   validates :email, :uniqueness => true, :presence => true
 
   has_many :families
-  has_many :concepts, :through => :roots
+  has_many :concepts, :through => :families
 end

@@ -4,4 +4,6 @@ class Concept < ApplicationRecord
 
   has_many :linkages
   has_many :linking_concepts, through: :linkages
+
+  has_one_attached :image
 end

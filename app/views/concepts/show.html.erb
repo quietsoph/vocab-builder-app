@@ -38,16 +38,16 @@
             <% end %>
 
 
-            <div class="related-roots">
-                <p class="label">Related roots:</p>
-                    <% if @concept.roots.present? %>
+            <div class="related-families">
+                <p class="label">Related families:</p>
+                    <% if @concept.families.present? %>
                     <ul>
-                        <% @concept.roots.each do |root| %>
+                        <% @concept.families.each do |root| %>
                         <li><%= link_to root.text.capitalize(), root_path(root.id) %></li>
                         <% end %>
                     </ul>
                         <% else %>
-                        <p><i>No related roots added.</i></p>
+                        <p><i>No related families added.</i></p>
                     <% end %>
             </div>
 

@@ -17,12 +17,8 @@
     </div>
     <div class="flex">
         <%= f.label :image %>
-        <%= f.text_area :image, :placeholder => "Search image or enter a link", :row => '3' %>
+        <%= f.file_field :image, multiple: false, direct_upload: true, :placeholder => "Search image or enter a link", :row => '3' %>
     </div>
-
-    <script async src="https://cse.google.com/cse.js?cx=61e59828d2a624953">
-    </script> -->
-     <div class="gcse-search"></div>
 
     <div class="flex">
         <%= f.label :example %>
@@ -45,9 +41,9 @@
     </div>
 
     <div>
-        <%= f.label :root_ids, 'Related roots' %>
+        <%= f.label :family_ids, 'Related families' %>
         <div class="checkboxes">
-            <%= f.collection_check_boxes :root_ids, @current_user.roots.all, :id, :text %>
+            <%= f.collection_check_boxes :family_ids, @current_user.families.all, :id, :text %>
         </div>
     </div>
 
